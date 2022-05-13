@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import DataTestPractice
 
 class PersonDataTestReFactory: XCTestCase {
     
@@ -22,11 +23,22 @@ class PersonDataTestReFactory: XCTestCase {
     }
 
     func testAddPerson() throws {
+                
         sut = People()
-        let person0 = Person.stub(with: "Park").setting(\.address, to: Address(nation: "U.S.A"))
+        
+        let person0 = Person
+            .stub(with: "Park")
+            .setting(\.address, to: Address(nation: "U.S.A"))
+            .setting(\.family, to: [])
+        
+        let people = [Person]
+            .stub(withCount: 5)
+            .setting(\.name, to: "kim")
+        
         XCTAssertFalse(sut.people.contains(person0))
         
         sut.addPerson(person: person0)
+        
         XCTAssertTrue(sut.people.contains(person0))
     }
 }

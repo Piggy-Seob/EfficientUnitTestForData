@@ -14,7 +14,7 @@
 		8D3C007E282E23A8009C4298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C007D282E23A8009C4298 /* Main.storyboard */; };
 		8D3C007F282E23A8009C4298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C007D282E23A8009C4298 /* Main.storyboard */; };
 		8D3C0081282E23EA009C4298 /* Stubbable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C0080282E23EA009C4298 /* Stubbable.swift */; };
-		8D3C0082282E23EA009C4298 /* Stubbable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C0080282E23EA009C4298 /* Stubbable.swift */; };
+		8D3C0084282E2A6E009C4298 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C0083282E2A6E009C4298 /* Extension.swift */; };
 		8DBDD2A4282E11EA00C6576E /* PersonDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDD2A3282E11EA00C6576E /* PersonDataTest.swift */; };
 		8DCF782D282D35CE000BF1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF782C282D35CE000BF1E0 /* Assets.xcassets */; };
 		8DCF7830282D35CE000BF1E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF782E282D35CE000BF1E0 /* LaunchScreen.storyboard */; };
@@ -22,9 +22,6 @@
 		8DCF7854282D35EC000BF1E0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7853282D35EC000BF1E0 /* Person.swift */; };
 		8DCF7857282D3DC9000BF1E0 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7856282D3DC9000BF1E0 /* Identifier.swift */; };
 		8DCF7859282E096D000BF1E0 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7858282E096D000BF1E0 /* People.swift */; };
-		8DCF785A282E0A45000BF1E0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7853282D35EC000BF1E0 /* Person.swift */; };
-		8DCF785B282E0A48000BF1E0 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7858282E096D000BF1E0 /* People.swift */; };
-		8DCF785C282E0A4A000BF1E0 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF7856282D3DC9000BF1E0 /* Identifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +39,7 @@
 		8D3C007A282E2319009C4298 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D3C007D282E23A8009C4298 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8D3C0080282E23EA009C4298 /* Stubbable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubbable.swift; sourceTree = "<group>"; };
+		8D3C0083282E2A6E009C4298 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8DBDD2A3282E11EA00C6576E /* PersonDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataTest.swift; sourceTree = "<group>"; };
 		8DCF7820282D35CA000BF1E0 /* DataTestPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTestPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DCF782C282D35CE000BF1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,9 +93,10 @@
 			children = (
 				8DCF7855282D35FB000BF1E0 /* SupportingFiles */,
 				8DCF7853282D35EC000BF1E0 /* Person.swift */,
-				8D3C0080282E23EA009C4298 /* Stubbable.swift */,
 				8DCF7858282E096D000BF1E0 /* People.swift */,
+				8D3C0080282E23EA009C4298 /* Stubbable.swift */,
 				8DCF7856282D3DC9000BF1E0 /* Identifier.swift */,
+				8D3C0083282E2A6E009C4298 /* Extension.swift */,
 				8DCF7831282D35CE000BF1E0 /* Info.plist */,
 			);
 			path = DataTestPractice;
@@ -228,6 +227,7 @@
 			files = (
 				8D3C0081282E23EA009C4298 /* Stubbable.swift in Sources */,
 				8D3C007B282E2319009C4298 /* SceneDelegate.swift in Sources */,
+				8D3C0084282E2A6E009C4298 /* Extension.swift in Sources */,
 				8D3C0078282E230C009C4298 /* AppDelegate.swift in Sources */,
 				8DCF7857282D3DC9000BF1E0 /* Identifier.swift in Sources */,
 				8DCF7854282D35EC000BF1E0 /* Person.swift in Sources */,
@@ -241,11 +241,7 @@
 			files = (
 				8D3C0079282E230C009C4298 /* AppDelegate.swift in Sources */,
 				8D3C007C282E2319009C4298 /* SceneDelegate.swift in Sources */,
-				8DCF785A282E0A45000BF1E0 /* Person.swift in Sources */,
 				8DBDD2A4282E11EA00C6576E /* PersonDataTest.swift in Sources */,
-				8DCF785B282E0A48000BF1E0 /* People.swift in Sources */,
-				8DCF785C282E0A4A000BF1E0 /* Identifier.swift in Sources */,
-				8D3C0082282E23EA009C4298 /* Stubbable.swift in Sources */,
 				8DCF783B282D35CF000BF1E0 /* PersonDataTestReFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

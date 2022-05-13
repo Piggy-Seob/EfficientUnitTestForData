@@ -6,6 +6,8 @@
 //
 
 import XCTest
+@testable import DataTestPractice
+
 
 class PersonDataTest: XCTestCase {
     
@@ -30,13 +32,16 @@ class PersonDataTest: XCTestCase {
             address: Address(nation: "korea"),
             family: []
         )
-        
+
         XCTAssertFalse(sut.people.contains(person0))
         
         sut.addPerson(person: person0)
         
         XCTAssertTrue(sut.people.contains(person0))
     }
+    
+    
+    
 }
 
 extension PersonDataTest {
