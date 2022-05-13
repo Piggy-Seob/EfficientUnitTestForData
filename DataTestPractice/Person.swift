@@ -9,8 +9,8 @@ import Foundation
 
 struct Person:Identifiable  {
     let id:Identifier<Person>
-    let name: String
-    let address: Address
+    var name: String
+    var address: Address
     var family: [Person]
 }
 
@@ -18,16 +18,21 @@ extension Person: Stubbable {
     static func stub(with id: Identifier<Person>) -> Person {
         return Person(
             id: id,
-            name: "",
-            address: Address(nataion: "Korea"),
+            name: "Park",
+            address: Address(nation: "Korea"),
             family: []
         )
     }
 }
 
+extension Person:Equatable {
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        lhs.id == rhs.id
+    }
+}
 
 struct Address {
-    let nataion: String
+    let nation: String
 }
 
 
@@ -43,7 +48,9 @@ extension Stubbable {
     }
 }
 
-//let person = Person.stub(with: "ID").setting(\.name, to: "Park")
 
-let person = Person.stub(with: "ID")
-let person0 = person.setting(\.name, to: "Kim")
+
+
+
+
+
