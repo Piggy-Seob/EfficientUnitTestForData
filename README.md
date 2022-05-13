@@ -81,5 +81,18 @@ extension Stubbable {
 | 장점 | 비교적 `구현하기 간단`함 </br> Test하는 함수내에서 불필요한 보일러플레이트 코드 줄임.| `재사용성 있는` Test용 데이터만드는 함수를 제작 가능.|
 | 단점 | 코드를 생성하는 코드가 `매번 추가` 될 수 있음.</br>(재사용성이 부족하다)| 설계 및 구현하기 쉽지 않음. </br> 간단한 데이터만 있을경우 `Over engineering`이 될수있음.|
 
+### 실제 구현 모습
+```Swift
+    func testAddPerson() throws {
+        sut = People()
+        let person0 = Person
+            .stub(with: "Park")
+            .setting(\.address, to: Address(nation: "U.S.A"))
+        
+        XCTAssertFalse(sut.people.contains(person0))
+        
+        sut.addPerson(person: person0)
+        XCTAssertTrue(sut.people.contains(person0))
+    }
 
-
+```
