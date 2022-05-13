@@ -38,3 +38,16 @@ class PersonDataTest: XCTestCase {
         XCTAssertTrue(sut.people.contains(person0))
     }
 }
+
+extension PersonDataTest {
+    func makePerson(withID: String, count: Int) -> [Person] {
+        return (0..<count).map { index in
+            Person(
+                id: Identifier(rawValue: "\(index)"),
+                name: "Kime",
+                address: Address(nation: "Japan"),
+                family: []
+            )
+        }
+    }
+}

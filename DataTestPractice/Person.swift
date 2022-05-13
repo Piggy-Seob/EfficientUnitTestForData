@@ -36,17 +36,6 @@ struct Address {
 }
 
 
-protocol Stubbable: Identifiable {
-    static func stub(with id: Identifier<Self>) -> Self
-}
-
-extension Stubbable {
-    func setting<T>(_ keyPath: WritableKeyPath<Self, T>, to value: T) -> Self {
-        var stub = self
-        stub[keyPath: keyPath] = value
-        return stub
-    }
-}
 
 
 
