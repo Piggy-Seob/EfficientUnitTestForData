@@ -7,7 +7,7 @@
 
 
 protocol Identifiable {
-    associatedtype RawIdentifier: Codable = String
+    associatedtype RawIdentifier: Codable & Hashable = String
 
     var id: Identifier<Self> { get }
 }
@@ -18,6 +18,11 @@ struct Identifier<Value: Identifiable> {
     
     init(rawValue: Value.RawIdentifier) {
         self.rawValue = rawValue
+    }
+}
+extension Identifier: Equatable {
+    static func == (lhs: Identifier<Value>, rhs: Identifier<Value>) -> Bool {
+        lhs.rawValue == rhs.rawValue
     }
 }
 
