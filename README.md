@@ -78,7 +78,7 @@ extension Stubbable {
 ### 장 단점.
 |방법|HelperMethod|Protocol|
 |:----|:----|:----|
-| 장점 | 비교적 `구현하기 간단`함 </br> Test하는 함수내에서 불필요한 보일러플레이트 코드 줄임.| `재사용성 있는` Test용 데이터만드는 함수를 제작 가능.|
+| 장점 | 비교적 `구현하기 간단`함. </br> Test하는 함수내 보일러플레이트 코드감소| `재사용성 있는` Test용 데이터만드는 함수를 제작 가능.|
 | 단점 | 코드를 생성하는 코드가 `매번 추가` 될 수 있음.</br>(재사용성이 부족하다)| 설계 및 구현하기 쉽지 않음. </br> 간단한 데이터만 있을경우 `Over engineering`이 될수있음.|
 
 ### 실제 구현 모습
@@ -95,4 +95,34 @@ extension Stubbable {
         XCTAssertTrue(sut.people.contains(person0))
     }
 
+```
+
+### Extension을 이용한 추가 기능
+
+Extesion을 이용해서 Array도 `생성` 및 Setting이 가능 하다.
+
+```Swift
+extension Array where Element: Stubbable, Element.RawIdentifier == String {
+    static func stub(withCount count: Int) -> Array {
+        return (0..<count).map {
+            .stub(with: Identifier(rawValue: "\($0)"))
+        }
+    }
+}
+```
+
+```Swift
+extension MutableCollection where Element: Stubbable {
+    func setting<T>(_ keyPath: WritableKeyPath<Element, T>,
+                    to value: T) -> Self {
+        var collection = self
+
+        for index in collection.indices {
+            let element = collection[index]
+            collection[index] = element.setting(keyPath, to: value)
+        }
+
+        return collection
+    }
+}
 ```
